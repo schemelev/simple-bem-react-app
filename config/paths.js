@@ -26,6 +26,7 @@ module.exports = {
     appHtml: resolveApp('public/index.html'),
     appIndexJs: resolveApp('src/index.js'),
     appPackageJson: resolveApp('package.json'),
+    appPublic: resolveApp('public'),
     appSrc: resolveApp('src'),
     appTarget: 'web',
     servedPath: ensureSlash('/', true),
