@@ -27,7 +27,10 @@ module.exports = {
     appIndexJs: resolveApp('src/index.js'),
     appPackageJson: resolveApp('package.json'),
     appPublic: resolveApp('public'),
+    appSets: null,
     appSrc: resolveApp('src'),
     appTarget: 'web',
+    publicPath: '/',
+    publicUrl: '',
     servedPath: ensureSlash('/', true),
 };

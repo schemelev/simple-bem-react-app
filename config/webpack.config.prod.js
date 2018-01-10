@@ -1,6 +1,10 @@
 'use strict';
 
+const inspect = require('util').inspect;
+
 const webpack = require('webpack');
+const merge = require('webpack-merge');
+const configCommon = require('./webpack.config.common');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const ManifestPlugin = require('webpack-manifest-plugin');
@@ -24,41 +28,18 @@ function getConfig(setName) {
 
     const extractTextPluginOptions = {};
 
-    return {
+    return merge(configCommon, {
         bail: true,
         devtool: 'source-map',
         entry: paths.appIndexJs,
         output: {
             publicPath,
-            path: appBuild,
-            filename: `static/js/${name}.[chunkhash:8].js`,
             chunkFilename: `static/js/${name}.[chunkhash:8].chunk.js`,
-        },
-        resolve: {
-            extensions: ['.js', '.json'],
-            modules: ['node_modules'],
+            filename: `static/js/${name}.[chunkhash:8].js`,
+            path: appBuild,
         },
         module: {
             rules: [
-                {
-                    test: /\.js$/,
-                    use: [
-                        {
-                            loader: 'webpack-bem-loader',
-                            options: {
-                                levels: paths.levels,
-                                techs: ['js', 'css'],
-                            },
-                        },
-                        {
-                            loader: 'babel-loader',
-                            options: {
-                                cacheDirectory: true,
-                            },
-                        },
-                    ],
-                    include: [paths.appSrc].concat(Object.keys(paths.levels)),
-                },
                 {
                     test: /\.css$/,
                     loader: ExtractTextPlugin.extract(
@@ -83,7 +64,6 @@ function getConfig(setName) {
             ],
         },
         plugins: [
-            new InterpolateHtmlPlugin(env.raw),
             new HtmlWebpackPlugin({
                 inject: true,
                 template: paths.appHtml,
@@ -101,7 +81,6 @@ function getConfig(setName) {
                     minifyURLs: true,
                 },
             }),
-            new webpack.DefinePlugin(env.stringified),
             new webpack.optimize.UglifyJsPlugin({
                 compress: {
                     screw_ie8: true, // React doesn't support IE8
@@ -124,7 +103,7 @@ function getConfig(setName) {
             }),
         ],
         target: paths.appTarget,
-    };
+    });
 }
 
 module.exports = paths.appSets
