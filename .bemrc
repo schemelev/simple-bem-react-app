@@ -4,10 +4,10 @@
     "node_modules/bem-react-components/blocks": {
       "scheme": "nested"
     },
-    "common.blocks": {
+    "bem-react/common.blocks": {
       "scheme": "nested"
     },
-    "src/components": {
+    "bem-react/components": {
       "scheme": "nested",
       "default": true
     }
