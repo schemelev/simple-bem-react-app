@@ -1,0 +1,15 @@
+{
+  "root": true,
+  "levels": {
+    "node_modules/bem-react-components/blocks": {
+      "scheme": "nested"
+    },
+    "common.blocks": {
+      "scheme": "nested"
+    },
+    "src/components": {
+      "scheme": "nested",
+      "default": true
+    }
+  }
+}
