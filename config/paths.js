@@ -22,9 +22,10 @@ function ensureSlash(path, needsSlash) {
 
 module.exports = {
     levels,
+    resolveApp,
     appBuild: resolveApp('build'),
     appHtml: resolveApp('public/index.html'),
-    appIndexJs: resolveApp('src/index.js'),
+    appIndexJs: resolveApp('src/index.tsx'),
     appPackageJson: resolveApp('package.json'),
     appPublic: resolveApp('public'),
     appSets: null,

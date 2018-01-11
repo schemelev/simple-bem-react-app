@@ -15,6 +15,24 @@ module.exports = {
     module: {
         rules: [
             {
+                test: /\.(ts|tsx)/,
+                use: [
+                    {
+                        loader: 'webpack-bem-loader',
+                        options: {
+                            levels: paths.levels,
+                            techs: ['js', 'css', 'ts'],
+                        },
+                    },
+                    {
+                        loader: 'ts-loader',
+                        options: {
+                            configFile: paths.resolveApp('config/tsconfig.common.json'),
+                        },
+                    },
+                ],
+            },
+            {
                 test: /\.js$/,
                 use: [
                     {

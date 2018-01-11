@@ -1,0 +1,22 @@
+{
+  "compileOnSave": true,
+  "compilerOptions": {
+      "declaration": false,
+      "experimentalDecorators": true,
+      "jsx": "react",
+      "lib": ["es2016", "dom"],
+      "module": "commonjs",
+      "noImplicitAny": false,
+      "noLib": false,
+      "removeComments": true,
+      "sourceMap": false,
+      "target": "es5",
+      "types": [
+        "node",
+        "react-dom",
+        "react"
+      ],
+      "importHelpers": true
+  },
+  "include": ["../src/**/*"]
+}
