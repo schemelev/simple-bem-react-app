@@ -1,6 +1,15 @@
 import * as React from 'react';
-import * as ReactDOM from 'react-dom';
 
-const fabrica = require('./index.js');
+import { container } from './DI/container';
+import { TYPES } from './DI/types';
 
-ReactDOM.render(<fabrica.App />, document.getElementById('root'));
+import { interfaces } from './MountReactToDOMNode';
+
+const fabrica = require('./index');
+
+const mountReact = container.get<interfaces.MountReactToDOMNode>(TYPES.MountReactToDOMNode);
+
+mountReact.mount(<fabrica.App />, 'root')
+    .catch((err) => {
+        console.error(err);
+    });

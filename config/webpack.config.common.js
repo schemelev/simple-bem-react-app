@@ -9,7 +9,7 @@ const env = getClientEnvironment(paths.publicUrl);
 
 module.exports = {
     resolve: {
-        extensions: ['.js', '.json'],
+        extensions: ['.ts', '.js', '.json'],
         modules: ['node_modules'],
     },
     module: {
@@ -18,16 +18,9 @@ module.exports = {
                 test: /\.(ts|tsx)/,
                 use: [
                     {
-                        loader: 'webpack-bem-loader',
-                        options: {
-                            levels: paths.levels,
-                            techs: ['js', 'css', 'ts'],
-                        },
-                    },
-                    {
                         loader: 'ts-loader',
                         options: {
-                            configFile: paths.resolveApp('config/tsconfig.common.json'),
+                            configFile: paths.resolveApp('tsconfig.json'),
                         },
                     },
                 ],
