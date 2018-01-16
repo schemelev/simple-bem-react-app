@@ -33,12 +33,12 @@
 
 
 /* Table-Cell */
-.Table-Cell {
+.Table_theme_v1 .Table-Cell {
     padding: 1em;
     text-align: left;
 }
 
-.Table-Cell.Table-Cell_isHead {
+.Table_theme_v1 .Table-Cell.Table-Cell_isHead {
     line-height: 1.2;
     font-weight: 700;
     color: white;
