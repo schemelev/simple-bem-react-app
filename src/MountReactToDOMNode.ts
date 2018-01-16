@@ -34,7 +34,7 @@ export default class MountReactToDOMNode implements interfaces.MountReactToDOMNo
                 if (this.settings.appMountTimerMs >= this.settings.appMountTimeMs) {
                     clearInterval(this.foundIntervalId);
 
-                    reject('not found element by ID');
+                    reject(`not found element by ID: "${elementId}"`);
                 } else {
                     const HTMLElement = document.getElementById(elementId);
 
