@@ -10,6 +10,10 @@ export default decl(
         elem: 'Row',
         tag: 'tr',
 
+        mods({ isHead }) {
+            return { isHead };
+        },
+
         content({ columns, isHead }) {
             return (columns || []).map((column, index) => {
                 return <Cell key={`cel-${index}`} isHead={isHead} column={column} />;

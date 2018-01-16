@@ -5,7 +5,7 @@ import Header from 'e:Header';
 import Intro from 'e:Intro';
 import ElemTable from 'e:Table';
 
-import Table from 'b:Table';
+import Table from 'b:Table m:theme=v1';
 
 export default decl({
     block: 'App',
@@ -17,7 +17,7 @@ export default decl({
                 To get started, edit <code>src/components/App/App.js</code> and save to reload.
             </Intro>,
             <ElemTable key="t">
-                <Table headers={headers} rows={rows} />
+                <Table headers={headers} rows={rows} theme={'v1'} />
             </ElemTable>,
         ];
     },

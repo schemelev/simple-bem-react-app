@@ -10,20 +10,24 @@ export default decl(
         block: 'Table',
         tag: 'table',
 
-        content({ headers, rows }) {
+        mods({ theme }) {
+            return { theme };
+        },
+
+        content(props) {
             return (
                 <Fragment>
-                    {this._getHead(headers)}
-                    {this._getBody(rows)}
+                    {this._getHead(props)}
+                    {this._getBody(props)}
                 </Fragment>
             );
         },
 
-        _getHead(headers) {
+        _getHead({ headers }) {
             return headers ? <Head key="h" headers={headers} /> : null;
         },
 
-        _getBody(rows) {
+        _getBody({ rows }) {
             return rows ? <Body key="b" rows={rows} /> : null;
         },
     },
@@ -31,6 +35,7 @@ export default decl(
         propTypes: {
             headers: PropTypes.array,
             rows: PropTypes.array.isRequired,
+            theme: PropTypes.oneOf(['v1']),
         },
     }
 );

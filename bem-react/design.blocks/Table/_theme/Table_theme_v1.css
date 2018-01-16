@@ -1,0 +1,45 @@
+.Table_theme_v1 {
+    background: white;
+    border-collapse: collapse;
+    border-radius: 10px;
+    margin: 0 auto;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+    -webkit-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.2);
+}
+
+
+/* Table-Row */
+.Table_theme_v1 .Table-Row.Table-Row_isHead {
+    background: rgba(54, 48, 74, 0.9);
+}
+.Table_theme_v1 .Table-Row.Table-Row_isHead:hover {
+    background: rgb(54, 48, 74);
+}
+
+.Table_theme_v1 .Table-Row:nth-child(2n) {
+    background: rgba(245, 245, 245, 0.9);
+}
+.Table_theme_v1 .Table-Row:hover {
+    color: rgb(85, 85, 85);
+    background-color: rgb(245, 245, 245);
+    cursor: pointer;
+}
+
+
+/* Table-Cell */
+.Table-Cell {
+    padding: 1em;
+    text-align: left;
+}
+
+.Table-Cell.Table-Cell_isHead {
+    line-height: 1.2;
+    font-weight: 700;
+    color: white;
+}

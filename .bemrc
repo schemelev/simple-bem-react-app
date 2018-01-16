@@ -7,6 +7,9 @@
     "bem-react/common.blocks": {
       "scheme": "nested"
     },
+    "bem-react/design.blocks": {
+      "scheme": "nested"
+    },
     "bem-react/components": {
       "scheme": "nested",
       "default": true
